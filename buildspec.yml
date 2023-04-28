@@ -1,0 +1,28 @@
+version: 0.2
+
+phases: 
+    install:
+        runtime-versions:
+            nodejs: 18
+        commands:
+            - echo "📦 installing packages..."
+            - echo "✅ Packages installed successfully."
+    pre_build:
+        commands: 
+            - echo "⚙️ Testing..."
+            - echo "✅ Tests passed successfully."
+    build:
+        commands:
+            - echo "🚧 Starting compiling packages..."
+            - echo "✅ Build passed successfully."
+    post_build:
+        commands:
+            - echo "🚚 Performing post-build packing and operations..."
+            - aws deploy push --application-name nodejs-app-ip --s3-location s3://node-deploy-revisions/development/source.zip --ignore-hidden-files --region us-east-1
+            - aws deploy create-deployment --application-name nodejs-app-ip --s3-location bucket=node-deploy-revisions,key=development/source.zip,bundleType=zip,eTag=cba5c295675e5e40424f5e1dc2e3c78a,version=Dnm9KYFJH3bdh2_wZSYLII91DDIFskuK --deployment-group-name node-hello-group --deployment-config-name CodeDeployDefault.AllAtOnce --description "Deploying from s3 bucket to ec2"
+            - echo "✅ Post build successful"
+
+artifacts:
+  files:
+    - '**/*'
+  name: deploy-nodejs-build-artifacts
