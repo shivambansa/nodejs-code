@@ -8,7 +8,7 @@ pipeline{
 
             steps {
             echo "building the application"
-            apt install wget
+                sh "apt install wget"
             }
 
         }
