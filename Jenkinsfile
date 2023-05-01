@@ -3,12 +3,19 @@ pipeline{
     agent any
 
     stages {
+        
+        stage("init") {
+            steps{
+            sh "sudo su"
+            sh "apt update"
+            }
+        }
 
         stage("build") {
 
             steps {
             echo "building the application"
-                sh "apt install wget"
+            sh "apt install wget -y"
             }
 
         }
