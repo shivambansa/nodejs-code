@@ -1,0 +1,11 @@
+---
+- name: install apache
+  hosts: slaves
+  remote_user: ubuntu
+  become: yes
+
+  tasks:
+  - name: Ensure apache is at the latest version
+    apt:
+      name: apache2
+      state: latest
