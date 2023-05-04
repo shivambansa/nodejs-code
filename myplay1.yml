@@ -1,11 +1,16 @@
 ---
-- name: install apache
-  hosts: slaves
-  remote_user: ubuntu
-  become: yes
+- hosts: slaves
+  become: true
 
   tasks:
   - name: Ensure apache is at the latest version
     apt:
       name: apache2
       state: latest
+      update_cache: yes
+
+  - name: Stop and disable apache service
+    systemd:
+      name: apache2
+      state: stopped
+      enabled: no
