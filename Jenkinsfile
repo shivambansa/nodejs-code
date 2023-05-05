@@ -28,7 +28,7 @@ pipeline{
             steps {
             echo "deploying the application using ansible-playbook"
 
-	    ansiblePlaybook credentialsId: '0c429859-6db4-4b03-bbf2-af5be05fa6fc', installation: 'ansible', inventory: '/var/lib/jenkins/workspace/node-pipeline/inventory', playbook: '/var/lib/jenkins/workspace/node-pipeline/playbooks/node-app-deploy.yml'
+	    ansiblePlaybook credentialsId: 'e93a3e8a-cf52-42f7-a0a1-ec23b6adf42e', installation: 'ansible', inventory: '/var/lib/jenkins/workspace/node-pipeline/inventory', playbook: '/var/lib/jenkins/workspace/node-pipeline/playbooks/node-app-deploy.yml'
             }
 
         }
