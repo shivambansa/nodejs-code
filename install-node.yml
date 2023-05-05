@@ -7,28 +7,28 @@
     - name: Install the gpg key for nodejs LTS
       apt_key:
         url: "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
-        state: absent
-        when: ansible_distribution == "Ubuntu"
+        state: present
+      when: ansible_distribution == "Ubuntu"
     
     - name: Install the nodejs LTS repos
       apt_repository:
         repo: "deb https://deb.nodesource.com/node_{{ NODEJS_VERSION }}.x {{ ansible_distribution_release }} main"
-        state: absent
+        state: present
         update_cache: yes
-        when: ansible_distribution == "Ubuntu"
+      when: ansible_distribution == "Ubuntu"
 
     - name: Install the nodejs
       apt:
         name: nodejs
-        state: absent
-        when: ansible_distribution == "Ubuntu"
+        state: present
+      when: ansible_distribution == "Ubuntu"
 
 
-- hosts: redhat_slaves
+- hosts: localhost
   become: true
   tasks:
     - name: hello 
       shell:
         cmd: curl -fsSL https://rpm.nodesource.com/setup_16.x | sudo bash -
         chdr: /tmp
-        when: ansible_distribution == "Amazon"
+      when: ansible_distribution == "Amazon"
