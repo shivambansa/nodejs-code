@@ -16,7 +16,7 @@ pipeline{
 
             steps {
             echo "building the application"
-            sh 'sudo npm i'
+            sh 'npm i'
             sh 'npm run build' 
             }
 
