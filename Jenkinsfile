@@ -25,7 +25,7 @@ pipeline{
 	ls 
 	whoami
 	pwd
-	ansible-playbook -i inventory playbooks/node-app-deploy.yml	
+	ansible-playbook -i inventory playbooks/node-app-deploy.yml --key-file /var/lib/jenkins/ansible
 	'''
 
             }
