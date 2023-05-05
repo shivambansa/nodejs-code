@@ -16,7 +16,7 @@ pipeline{
 
             steps {
             echo "building the application"
-            sh 'npm i'
+            sh 'sudo npm i'
             sh 'npm run build' 
             }
 
@@ -28,7 +28,7 @@ pipeline{
             steps {
             echo "deploying the application"
 	    sh '''
-	       npm i pm2@latest -g
+	       sudo npm i pm2@latest -g
 	       pm2 start
 	       '''
             
