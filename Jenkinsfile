@@ -7,7 +7,9 @@ pipeline{
     stages {
         
         stage("checkout"){
+	steps {
             git 'https://github.com/awsandgit/nodejs-code.git'
+	}
 	} 
 
         stage("build") {
