@@ -1,3 +1,7 @@
-[slaves]
+[ubuntu_slaves]
 10.200.1.254
 10.200.0.149
+
+
+[redhat_slaves]
+10.200.1.183 ansible_user=ec2-user
