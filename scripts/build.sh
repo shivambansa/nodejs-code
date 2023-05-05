@@ -2,4 +2,4 @@
 
 set -x
 mkdir build
-cp index.js package.json ecosystem.config.js build/
+cp -fr index.js package.json ecosystem.config.js build/
