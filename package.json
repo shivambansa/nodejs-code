@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "build": "echo building files",
+    "build": "bash scripts/build.sh",
     "test": "echo testing && exit 1"
   },
   "repository": {

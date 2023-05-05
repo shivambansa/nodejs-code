@@ -11,7 +11,7 @@ pipeline{
             steps {
             echo "building the application"
             sh 'npm i'
-            sh 'npm run build' 
+            sh 'npm run build'
             }
 
         }
@@ -22,9 +22,6 @@ pipeline{
             steps {
             echo "deploying the application using ansible-playbook"
 	sh '''
-	ls 
-	whoami
-	pwd
 	ansible-playbook -i inventory playbooks/node-app-deploy.yml --key-file /var/lib/jenkins/ansible
 	'''
 

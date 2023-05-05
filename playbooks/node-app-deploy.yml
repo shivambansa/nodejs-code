@@ -2,10 +2,9 @@
   become: true
   tasks:
     - name: copy built files to deploy-server
-      copy:
-        src: /var/lib/jenkins/workspace/node-pipeline/ 
+      synchronize:
+        src: /var/lib/jenkins/workspace/node-pipeline/build 
         dest: /var/www/my-app/
-        mode: 0755
         owner: root
         group: root
 
