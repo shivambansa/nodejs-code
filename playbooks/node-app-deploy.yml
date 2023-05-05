@@ -11,7 +11,7 @@
 
     - name: start node
       shell:
-        cmd: npm i && npm start
+        cmd: npm i && npm i pm2@latest && pm2 start
         chdir: /var/www/my-app/
 
   
