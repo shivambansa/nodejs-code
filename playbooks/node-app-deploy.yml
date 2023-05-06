@@ -8,9 +8,18 @@
         delete: true
         recursive: true
 
+    - name: change-owner
+      file:
+        path: /var/www/my-app/
+        owner: ubuntu
+        group: ubuntu
+        recurse: yes
+        state: directory
+
     - name: start node
       shell: startnode.sh
       args:
         chdir: /var/www/my-app/
+        executable: /bin/bash
 
   
