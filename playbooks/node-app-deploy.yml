@@ -17,9 +17,9 @@
         state: directory
 
     - name: start node
-      shell: startnode.sh
-      args:
+      shell: 
         chdir: /var/www/my-app/
-        executable: /bin/bash
+        cmd: /bin/bash startnode.sh
+      become: yes
 
   
