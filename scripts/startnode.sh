@@ -2,7 +2,7 @@
 
 
 set -x
-rm -rf node-modules/ package-lock.json
-npm i
-npm i pm2@latest -g
-/usr/bin/pm2 start
+sudo rm -rf node-modules/ package-lock.json
+sudo npm i
+sudo npm i pm2@latest -g
+sudo /usr/bin/pm2 start
