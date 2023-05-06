@@ -1,9 +1,9 @@
 const http = require('http');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
-  const msg = 'Added another instance,application loadbalancer and cloudfront distro\nHello, Node running at 3000! \nChanges in code to see autodeployment'
+  const msg = 'Added another instance,application loadbalancer and cloudfront distro\nHello, Node running at 8000! \nChanges in code to see autodeployment'
   res.end(msg);
 });
 
