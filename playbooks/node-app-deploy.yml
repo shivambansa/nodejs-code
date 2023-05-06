@@ -9,8 +9,8 @@
         recursive: true
 
     - name: start node
-      shell:
-        cmd: npm i && npm i pm2@latest && pm2 start
+      shell: startnode.sh
+      args:
         chdir: /var/www/my-app/
 
   
