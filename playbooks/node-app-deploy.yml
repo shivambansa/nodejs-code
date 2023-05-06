@@ -1,5 +1,5 @@
 - hosts: ubuntu_slaves
-  become: true
+  become: yes
   tasks:
     - name: copy built files to deploy-server
       synchronize:
