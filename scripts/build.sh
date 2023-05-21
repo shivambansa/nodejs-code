@@ -1,5 +1,5 @@
 #!/bin/bash
 
 set -x
-mkdir build
+mkdir -p build
 cp -fr index.js package-lock.json ecosystem.config.js scripts/startnode.sh build/
