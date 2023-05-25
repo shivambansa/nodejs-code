@@ -2,5 +2,7 @@
 
 set -e
 apt update -y
-/usr/bin/npm i pm2@latest -g
+mkdir -p /var/www/myapp
+cd /var/www/myapp
+rm -rf *
 echo "Code BeforeInstall event script ran."
