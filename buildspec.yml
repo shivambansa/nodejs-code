@@ -22,4 +22,4 @@ phases:
 artifacts:
   files:
     - '**/*'
-  name: deploy-nodejs-build-artifacts
+  name: nodejs-build-artifacts
